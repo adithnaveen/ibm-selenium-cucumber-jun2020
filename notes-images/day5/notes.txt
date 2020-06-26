@@ -1,7 +1,4 @@
-CapG - PJP 
-Swiggy 
-Telestra 
-
+ 
 package com.training.testrunner;
 
 import org.junit.runner.RunWith;
