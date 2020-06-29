@@ -1,0 +1,94 @@
+Jenkins  - CI/CD - simple, pipe line 
+simple java program 
+selenium + cucumber project 
+selenium + cucumber project  - on github 
+call jenkins to build 
+
+
+
+
+Hi.java  -> Javac -> .class/es 
+
+300 class -> .jar - T1
+300 class -> .jar - T2 
+300 class -> .jar - T3 
+300 class -> .jar - T4 
+
+
+pojo, Servlets/JSP (HttpHander + View)
+ 
+ .war 
+ 
+EJB - tomcat vs jboss / glassfish / bea web logic / web sphere (IBM)
+ 	  web server vs application server 
+.ear 
+
+
+to start jenkins 
+> java -jar jenkins.war 
+
+1. Have java 1.8 
+	set the path 
+2. download maven 
+	https://maven.apache.org/download.cgi
+	env variable -> /Volumes/Kanchan/Softwares/maven/maven-3.6/bin
+	path -> /Volumes/Kanchan/Softwares/maven/maven-3.6/bin
+3. https://git-scm.com/downloads
+	set the path 
+	c:\program files\git\... 
+
+
+
+pipeline {
+   agent any
+
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "M3"
+   }
+
+   stages {
+      stage('Build') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+
+            // Run Maven on a Unix agent.
+            sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+            // To run Maven on a Windows agent, use
+            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+         }
+
+         post {
+            // If Maven was able to run the tests, even if some of the test
+            // failed, record the test results and archive the jar file.
+            success {
+               junit '**/target/surefire-reports/TEST-*.xml'
+               archiveArtifacts 'target/*.jar'
+            }
+         }
+      }
+   }
+}
+
+
+
+naveen.srinivas@manipalglobal.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
