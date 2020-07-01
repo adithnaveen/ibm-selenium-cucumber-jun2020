@@ -1,0 +1,34 @@
+Jira - Zephyr 
+
+
+1. Create Project 
+2. install zephyr - on the menu click on Apps -> Find New Apps 
+3. by default jira has 
+	Epic-01 
+		Task-01
+			Test-01 (IZ-4)
+		Task-02
+			Test-02 (IZ-5)
+			Test-03	(IZ-6)	
+		Task-03
+			Test
+		Bug 
+			Test
+			
+	label - ibm-proj-01 
+	
+4. Story point - fibonacci, 1,2,4,8,16, 
+5. goto project - settings - issue types - in issure types create a issue - Test 
+6. create the Test Details 
+	Test-01
+	Test-02
+7. Create a Test cycle 
+
+
+
+
+
+
+
+
+
